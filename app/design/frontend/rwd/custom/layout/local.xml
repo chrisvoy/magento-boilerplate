@@ -1,0 +1,16 @@
+<layout>
+	<default>
+		<!-- <remove name="right"/> -->
+		<reference name="right">
+            <action method="unsetChild"><name>catalog.compare.sidebar</name></action>
+        </reference>
+		<reference name="left_first">
+			<action method="insert">
+				<block>catalog.compare.sidebar</block>
+				<siblingName>catalog.leftnav</siblingName>
+				<after>0</after>
+			</action>
+            <!-- <block type="catalog/product_compare_sidebar" before="cart_sidebar" name="catalog.compare.sidebar" template="catalog/product/compare/sidebar.phtml"/> -->
+        </reference>
+	</default>
+</layout>

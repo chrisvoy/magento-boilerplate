@@ -1,0 +1,37 @@
+<config>
+	<global>
+		<blocks>
+			<training_render>
+				<class>Training_Render_Block</class>
+			</training_render>
+			<page>
+				<rewrite>
+					<html_breadcrumbs>Training_Render_Block_Html_Breadcrumbs</html_breadcrumbs>
+					<!-- Mage_Page_Block_Html_Breadcrumbs -->
+				</rewrite>
+			</page>
+		</blocks>
+	</global>
+	<frontend>
+		<routers>
+			<training_render>
+				<use>standard</use>
+				<args>
+					<!-- Training/Routing/controllers -->
+					<module>Training_Render</module>
+					<frontName>render</frontName>
+				</args>
+			</training_render>
+		</routers>
+	</frontend>
+
+	<frontend>
+		<layout>
+			<updates>
+				<training_render>
+					<file>training/render.xml</file>
+				</training_render>
+			</updates>
+		</layout>
+	</frontend>
+</config>

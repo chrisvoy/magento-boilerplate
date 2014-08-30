@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento Hackathon 2014 UK
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * @category   Magehack
+ * @package    Magehack_Autogrid
+ * @copyright  Copyright (c) 2014 Magento community
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config>
+    <tables>
+        <example_product_entity>
+            <!-- Table name or table alias: -->
+            <table>catalog/product</table>
+            <!-- Alternative table title -->
+            <title>Autogrid Example Table catalog/products</title>
+            <grid>
+                <!-- Grid configuration overriding default values -->
+                <entity_type_id>
+                    <sortable>0</sortable>
+                </entity_type_id>
+                <has_options>
+                    <source_model>magehack_autogrid/table_column_source_yesno</source_model>
+                </has_options>
+                <type_id>
+                    <header>The Product Type</header>
+                    <type>varchar</type>
+                    <filter>0</filter>
+                    <!--<sortable>0</sortable>-->
+                </type_id>
+            </grid>
+            <!-- Form field properties can also be specified if the defaults aren't satisfactory -->
+            <!--
+            <form>
+                <has_options>
+                    <backend_model>custom/backend_model</backend_model>
+                </has_options>
+            </form>
+            -->
+        </example_product_entity>
+        <example_core_config_data>
+            <table>core/config_data</table>
+            <uri>configuration_data</uri>
+        </example_core_config_data>
+        <example_core_resource>
+            <!-- Only the table name is enough. The title is optional, too -->
+            <table>core_resource</table>
+            <title>Autogrid Example Table core/resource</title>
+        </example_core_resource>
+    </tables>
+</config>

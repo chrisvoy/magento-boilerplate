@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<modules>
+		<Training_Distributor>
+			<version>0.1.1</version>
+		</Training_Distributor>
+	</modules>
+	
+	<global>
+		<resources>
+			<training_distributor_setup>
+				<setup>
+					<module>Training_Distributor</module>
+					<class>Mage_Core_Model_Resource_Setup</class>
+				</setup>
+			</training_distributor_setup>
+		</resources>
+
+        <helpers>
+            <training_distributor>
+                <class>Training_Distributor_Helper</class>
+            </training_distributor>
+        </helpers>
+
+        <blocks>
+            <training_distributor>
+                <class>Training_Distributor_Block</class>
+            </training_distributor>
+        </blocks>
+
+		<models>
+			<training_distributor>
+				<class>Training_Distributor_Model</class>
+				<resourceModel>training_distributor_resource</resourceModel>
+			</training_distributor>
+			<training_distributor_resource>
+				<class>Training_Distributor_Model_Resource</class>
+				<entities>
+					<!-- table alias suffix -->	
+					<distributor>
+						<table>training_distributor_entity</table>
+					</distributor>
+				</entities>
+			</training_distributor_resource>
+		</models>
+	</global>
+    <default>
+        <training_distributor>
+            <general>
+                <show_distributor>1</show_distributor>
+            </general>
+        </training_distributor>
+    </default>
+
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Training_Distributor before="Mage_Adminhtml">Training_Distributor_Adminhtml</Training_Distributor>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <adminhtml>
+        <layout>
+            <updates>
+                <training_distributor>
+                    <file>training/distributor.xml</file>
+                </training_distributor>
+            </updates>
+        </layout>
+    </adminhtml>
+</config>

@@ -1,0 +1,11 @@
+<config>
+	<modules>
+		<Training_Recap>
+			<active>true</active>
+			<codePool>local</codePool>
+			<depends>
+				<Mage_Log/>
+			</depends>
+		</Training_Recap>
+	</modules>
+</config>

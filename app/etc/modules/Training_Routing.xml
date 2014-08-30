@@ -1,0 +1,8 @@
+<config>
+	<modules>
+		<Training_Routing>
+			<active>true</active>
+			<codePool>local</codePool>
+		</Training_Routing>
+	</modules>
+</config>

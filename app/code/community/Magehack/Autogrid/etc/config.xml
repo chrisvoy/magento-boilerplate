@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Magento Hackathon 2014 UK
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * @category   Magehack
+ * @package    Magehack_Autogrid
+ * @copyright  Copyright (c) 2014 Magento community
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+-->
+<config>
+    <phpunit>
+        <suite>
+            <modules>
+                <Magehack_Autogrid/>
+            </modules>
+        </suite>
+    </phpunit>
+    <global>
+        <models>
+            <magehack_autogrid>
+                <class>Magehack_Autogrid_Model</class>
+                <resourceModel>magehack_autogrid_resource</resourceModel>
+            </magehack_autogrid>
+            <magehack_autogrid_resource>
+                <class>Magehack_Autogrid_Model_Resource</class>
+            </magehack_autogrid_resource>
+        </models>
+        <helpers>
+            <magehack_autogrid>
+                <class>Magehack_Autogrid_Helper</class>
+            </magehack_autogrid>
+        </helpers>
+        <blocks>
+            <magehack_autogrid>
+                <class>Magehack_Autogrid_Block</class>
+            </magehack_autogrid>
+        </blocks>
+        <events>
+            <controller_front_init_routers>
+                <observers>
+                    <magehack_autogrid>
+                        <class>Magehack_Autogrid_Controller_Router</class>
+                        <method>initControllerRouters</method>
+                    </magehack_autogrid>
+                </observers>
+            </controller_front_init_routers>
+        </events>
+    </global>
+    <adminhtml>
+        <autogrid>
+            <column_defaults>
+                <entity_type_id>
+                    <frontend_input>select</frontend_input>
+                    <source_model>magehack_autogrid/table_column_source_entityTypeId</source_model>
+                </entity_type_id>
+                <attribute_set_id>
+                    <frontend_input>select</frontend_input>
+                    <source_model>magehack_autogrid/table_column_source_attributeSetId</source_model>
+                </attribute_set_id>
+                <store_id>
+                    <frontend_input>select</frontend_input>
+                    <source_model>magehack_autogrid/table_column_source_storeId</source_model>
+                </store_id>
+                <store_ids>
+                    <frontend_input>multiselect</frontend_input>
+                    <source_model>magehack_autogrid/table_column_source_storeId</source_model>
+                </store_ids>
+                <website_id>
+                    <frontend_input>select</frontend_input>
+                    <source_model>magehack_autogrid/table_column_source_websiteId</source_model>
+                </website_id>
+                <website_ids>
+                    <frontend_input>multiselect</frontend_input>
+                    <source_model>magehack_autogrid/table_column_source_websiteId</source_model>
+                </website_ids>
+                <created_at>
+                    <disabled>1</disabled>
+                    <backend_model>magehack_autogrid/table_column_backend_createdAt</backend_model>
+                </created_at>
+                <updated_at>
+                    <disabled>1</disabled>
+                    <backend_model>magehack_autogrid/table_column_backend_updatedAt</backend_model>
+                </updated_at>
+            </column_defaults>
+        </autogrid>
+        <layout>
+            <updates>
+                <magehack_autogrid module="Magehack_Autogrid">
+                    <file>magehack/autogrid.xml</file>
+                </magehack_autogrid>
+            </updates>
+        </layout>
+    </adminhtml>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <magehack_autogrid before="Mage_Adminhtml">Magehack_Autogrid_Adminhtml</magehack_autogrid>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+</config>

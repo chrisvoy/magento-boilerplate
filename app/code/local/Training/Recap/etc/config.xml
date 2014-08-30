@@ -1,0 +1,23 @@
+<config>
+	<global>
+		<models>
+			<training_recap>
+				<class>Training_Recap_Model</class>
+			</training_recap>
+		</models>	
+	</global>
+
+	<frontend>
+		<routers>
+			<training_recap>
+				<use>standard</use>
+				<args>
+					<!-- Training/Routing/controllers -->
+					<module>Training_Recap</module>
+					<frontName>recap</frontName>
+				</args>
+			</training_recap>
+		</routers>
+	</frontend>
+</config>
+

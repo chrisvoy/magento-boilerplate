@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <training translate="label" module="training_distributor">
+            <label>Training</label>
+            <sort_order>506</sort_order>
+        </training>
+    </tabs>
+    <sections>
+        <training_distributor translate="label" module="training_distributor">
+            <label>Distributors</label>
+            <sort_order>100</sort_order>
+            <tab>training</tab>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <general translate="label" module="training_distributor">
+                    <label>General Settings</label>
+                    <expanded>1</expanded>
+                    <sort_order>10</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <show_distributor translate="label comment" module="training_distributor">
+                            <label>Display Distributors</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>training_distributor/system_config_source_show</source_model>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment><![CDATA[<strong>Display distributor on product page</strong>]]></comment>
+                            <tooltip>Ping!</tooltip>
+                        </show_distributor>
+                        <store_distributor translate="label" module="training_distributor">
+                            <label>Store Distributor</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends>
+                                <show_distributor>1</show_distributor>
+                            </depends>
+                        </store_distributor>
+                    </fields>
+                </general>
+            </groups>
+        </training_distributor>
+    </sections>
+</config>

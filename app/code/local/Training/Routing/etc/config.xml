@@ -1,0 +1,27 @@
+<config>
+	<frontend>
+		<routers>
+			<customer>
+				<args>
+					<modules>
+						<training_routing before="Mage_Customer">Training_Routing_Customer</training_routing>
+					</modules>
+				</args>
+			</customer>
+		</routers>
+	</frontend>
+
+	<!-- add a custom route "training" -->
+	<frontend>
+		<routers>
+			<training_routing>
+				<use>standard</use>
+				<args>
+					<!-- Training/Routing/controllers -->
+					<module>Training_Routing</module>
+					<frontName>training</frontName>
+				</args>
+			</training_routing>
+		</routers>
+	</frontend>
+</config>

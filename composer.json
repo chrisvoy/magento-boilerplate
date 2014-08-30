@@ -1,0 +1,11 @@
+{
+    "name": "colinmollenhour/modman",
+    "homepage": "https://github.com/colinmollenhour/modman",
+    "license": "Apache-2.0",
+    "description": "Module Manager",
+    "authors": [
+        {
+            "name": "Colin Mollenhour"
+        }
+    ]
+}

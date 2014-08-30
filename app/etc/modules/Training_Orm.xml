@@ -1,0 +1,8 @@
+<config>
+	<modules>
+		<Training_Orm>
+			<active>true</active>
+			<codePool>local</codePool>
+		</Training_Orm>
+	</modules>
+</config>

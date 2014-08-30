@@ -1,0 +1,39 @@
+<layout>
+	<default>
+		<reference name="content">
+			<block type="core/template"
+				   name="training.render.layout.example"
+				   template="training/render/layoutxml.phtml">
+				<action method="setBackgroundColor">
+					<color>lightblue</color>
+				</action>
+			</block>
+		</reference>
+	</default>
+
+	<catalog_product_view>
+		<reference name="training.render.layout.example">
+			<action method="setBackgroundColor">
+					<color>orange</color>
+				</action>
+		</reference>
+	</catalog_product_view>
+
+	<training_render_block_layout>
+		<reference name="content">
+			<block type="cms/block" name="example.cms.block">
+				<action method="setBlockId">
+					<id>flaunt_yourself</id>
+				</action>
+			</block>
+		</reference>
+	</training_render_block_layout>
+
+	<wow_something_new>
+		<block type="core/text" name="new-root" output="toHtml">
+			<action method="setText">
+				<content><![CDATA[<h1>You Win</h1>]]></content>
+			</action>
+		</block>
+	</wow_something_new>
+</layout>

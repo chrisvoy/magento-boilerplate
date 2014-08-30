@@ -1,0 +1,39 @@
+<config>
+    <modules>
+        <Training_Orm>
+            <version>0.1.5</version>
+        </Training_Orm>
+    </modules>
+
+	<global>
+        <resources>
+            <training_orm_setup>
+                <setup>
+                    <module>Training_Orm</module>
+                </setup>
+            </training_orm_setup>
+        </resources>
+
+		<models>
+			<training_orm>
+				<resourceModel>training_orm_resource</resourceModel>
+			</training_orm>
+			<training_orm_resource>
+				<class>Training_Orm_Model_Resource</class>
+			</training_orm_resource>
+		</models>
+	</global>
+	
+	<frontend>
+		<routers>
+			<training_orm>
+				<use>standard</use>
+				<args>
+					<module>Training_Orm</module>
+					<frontName>orm</frontName>
+				</args>
+			</training_orm>
+		</routers>
+	</frontend>
+
+</config>

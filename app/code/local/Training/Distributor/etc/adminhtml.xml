@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <!-- Add adminhtml menu entry under the Catalog section -->
+    <menu>
+        <catalog>
+            <children>
+                <training_distributor translate="title" module="training_distributor">
+                    <title>Manage Distributors</title>
+                    <action>adminhtml/distributor</action>
+                    <sort_order>256</sort_order>
+                </training_distributor>
+            </children>
+        </catalog>
+    </menu>
+
+    <!-- Add ACL Settings under System > Permissions > Roles -->
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <catalog>
+                        <children>
+                            <training_distributor translate="title" module="training_distributor">
+                                <title>Manage Distributors Section</title>
+                                <sort_order>256</sort_order>
+                            </training_distributor>
+                        </children>
+                    </catalog>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <training_distributor translate="title" module="training_distributor">
+                                        <title>Distributor Configuration</title>
+                                        <sort_order>200</sort_order>
+                                    </training_distributor>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

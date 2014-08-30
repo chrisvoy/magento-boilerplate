@@ -1,0 +1,79 @@
+<config>
+	<global>
+		<models>
+			<training_practice>
+				<class>Training_Practice_Model</class>
+			</training_practice>
+		</models>	
+	</global>
+
+	<frontend>
+		<events>
+			<!-- event name: -->
+			<catalog_product_load_after>
+				<observers>
+					<training_practice><!--unique node name -->
+						<type>model</type><!-- optional, model or singleton -->
+						<class>training_practice/observer</class>
+						<method>catalogProductLoadAfter</method>
+					</training_practice>
+				</observers>
+			</catalog_product_load_after>
+			<catalog_product_collection_load_after>
+				<observers>
+					<training_practice><!--unique node name -->
+						<type>model</type><!-- optional, model or singleton -->
+						<class>training_practice/observer</class>
+						<method>catalogProductCollectionLoadAfter</method>
+					</training_practice>
+				</observers>
+			</catalog_product_collection_load_after>
+		</events>
+	</frontend>
+
+	<!-- rewrite catalog product -->
+	<!-- global/[class type]/[class group]/rewrite/[class suffix] -->
+	<global>
+		<models>
+			<catalog>
+				<rewrite>
+					<!-- [target module]_[class-type]_[class-group]_[class-suggix] -->
+					<product>Training_Practice_Model_Catalog_Product</product>
+				</rewrite>
+			</catalog>
+			<customer>
+				<rewrite>
+					<customer>Training_Practice_Model_Customer_Customer</customer>
+				</rewrite>
+			</customer>
+			<!-- <resourceModel>catalog_resource</resourceModel> -->
+			<catalog_resource>
+				<rewrite>
+					<product>Training_Practice_Model_Resource_Catalog_Product</product>
+				</rewrite>
+			</catalog_resource>
+		</models>
+		<blocks>
+			<catalog>
+				<rewrite>
+					<product_view>Training_Practice_Block_Catalog_Product_View</product_view>
+				</rewrite>
+			</catalog>
+		</blocks>
+		<helpers>
+			<customer>
+				<rewrite>
+					<address>Training_Practice_Helper_Customer_Address</address>
+				</rewrite>
+			</customer>
+		</helpers>
+	</global>
+
+	<default>
+		<contacts>
+			<email>
+				<recipient_email>me@mock.com</recipient_email>
+			</email>
+		</contacts>
+	</default>
+</config>
